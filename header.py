@@ -8,16 +8,16 @@ import sys
 # Parse arguments
 license_path = ""
 for i in range(1, len(sys.argv)):
-  if "--licence" == sys.argv[i] and i != len(sys.argv) - 1:
-    license_path = sys.argv[i+1]
+    if ("--license" == sys.argv[i]) & (i != len(sys.argv) - 1):
+        license_path = sys.argv[i+1]
 
 source_path = ""
 if len(sys.argv) > 1:
-  # path to source directory is always the last argument
-  source_path = sys.argv[len(sys.argv)-1]
+    # path to source directory is always the last argument
+    source_path = sys.argv[len(sys.argv)-1]
 else:
-  print("ERROR: Path to source directory is not provided")
-  sys.exit(1)
+    print("ERROR: Path to source directory is not provided")
+    sys.exit(1)
   
 
 # First we will collect list of all headers from source files and parse them.
@@ -77,12 +77,12 @@ for subdir, dirs, files in os.walk(source_path):
 
 # Add licence at the begging of the header
 if license_path:
-  license = open(license_path)
-  print("/*")
-  for line in license.readlines():
-    print(line.replace("\n", ""))
-  print("*/\n")
-  license.close()
+    license = open(license_path)
+    print("/*")
+    for line in license.readlines():
+        print(line.replace("\n", ""))
+    print("*/\n")
+    license.close()
 
 print("#pragma once")
 # Insert global includes
