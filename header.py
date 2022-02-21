@@ -43,8 +43,8 @@ for subdir, dirs, files in os.walk(source_path):
             src_lines = f.readlines()
 
             # Every header file might depend on another header file in our project.
-            # This information is every important in order to create a valid single header.
-            # so this this the list of dependencies for every header
+            # This information is very important in order to create a valid single header.
+            # this is the list of dependencies for every header
             deps = []
             # Source code lines that we will include into resulting header without any changes
             lines = []
@@ -73,9 +73,9 @@ for subdir, dirs, files in os.walk(source_path):
             })
             f.close()
 
-# And now we're going to construction of the header
+# And now we're going to the construction of the header
 
-# Add licence at the begging of the header
+# Add licence at the begging of the header (if presented)
 if license_path:
     license = open(license_path)
     print("/*")
