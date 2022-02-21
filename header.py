@@ -15,7 +15,7 @@ source_path = ""
 if len(sys.argv) > 1:
   # path to source directory is always the last argument
   source_path = sys.argv[len(sys.argv)-1]
-else
+else:
   print("ERROR: Path to source directory is not provided")
   sys.exit(1)
   
