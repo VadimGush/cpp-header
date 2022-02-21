@@ -1,13 +1,23 @@
 #!/bin/python3
+# I know this script is a little bit horrible and needs refactoring,
+# but for now at least it does its job perfectly (in my case).
 import os
 import re
 import sys
 
 # Parse arguments
 license_path = ""
-for i in range(len(sys.argv)):
+for i in range(1, len(sys.argv)):
   if "--licence" == sys.argv[i] and i != len(sys.argv) - 1:
     license_path = sys.argv[i+1]
+
+source_path = ""
+if len(sys.argv) > 1:
+  # path to source directory is always the last argument
+  source_path = sys.argv[len(sys.argv)-1]
+else
+  print("ERROR: Path to source directory is not provided")
+  sys.exit(1)
   
 
 # First we will collect list of all headers from source files and parse them.
@@ -24,7 +34,7 @@ global_includes = set()
 # list of parsed headers
 parsed_headers = []
 
-for subdir, dirs, files in os.walk("../src"):
+for subdir, dirs, files in os.walk(source_path):
     for file in files:
         if (file.endswith(".h") or file.endswith(".hpp")) and "experiments" not in subdir:
             filepath = os.path.join(subdir, file)
