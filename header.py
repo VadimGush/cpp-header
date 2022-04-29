@@ -36,7 +36,7 @@ parsed_headers = []
 
 for subdir, dirs, files in os.walk(source_path):
     for file in files:
-        if (file.endswith(".h") or file.endswith(".hpp")) and "experiments" not in subdir:
+        if file.endswith(".h") or file.endswith(".hpp"):
             filepath = os.path.join(subdir, file)
             # Open this header file
             f = open(filepath)
