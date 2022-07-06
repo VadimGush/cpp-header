@@ -1,6 +1,6 @@
 # C++ Header Builder
 
-Simple Python script that builds one header for your C++ library. All you need is to provide path to your source files.
+Takes all C/C++ headers from your project and compiles them into one header file.
 
 ## Execution
 
