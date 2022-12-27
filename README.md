@@ -1,4 +1,4 @@
-# C/C++ Header Builder
+# C/C++ One Header Builder
 
 Takes all C/C++ headers from your project and compiles them into one header file.
 
