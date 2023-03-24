@@ -1,6 +1,6 @@
 # C/C++ One Header Builder
 
-Takes all C/C++ headers from your project and compiles them into one header file.
+Takes all C/C++ headers from your project and compiles them into one header file. And yep, it takes care of rearranging all dependencies.
 
 ## Execution
 
